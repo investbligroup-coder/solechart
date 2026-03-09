@@ -9,7 +9,7 @@ export const About: React.FC = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden mb-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/artist_garden.jpg"
+            src="/artist_garden.jpg"
             alt="About Hero"
             className="w-full h-full object-cover opacity-30"
             referrerPolicy="no-referrer"
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
               className="relative"
             >
               <div className="aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 flex items-center justify-center bg-gradient-to-b from-primary/5 to-transparent">
-                <img src="/src/assets/artist_sitting.png" alt="Solechart Sitting" className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="/artist_sitting.png" alt="Solechart Sitting" className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
             </motion.div>

@@ -128,7 +128,7 @@ export const MiniPlayer: React.FC = () => {
         {/* Track Info */}
         <div className="flex items-center gap-4 w-1/3">
           <div className="w-12 h-12 bg-white/5 rounded-md overflow-hidden flex-shrink-0">
-            <img src="/src/assets/la_torten_cover.jpg" alt="Current Track" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/la_torten_cover.jpg" alt="Current Track" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </div>
           <div className="hidden sm:block overflow-hidden">
             <h4 className="text-sm font-bold truncate">La Torten</h4>

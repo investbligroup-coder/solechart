@@ -7,16 +7,16 @@ export const SHOWS: Show[] = [
 ];
 
 export const RELEASES: Release[] = [
-  { id: '0', title: 'La Torten', type: 'Single', year: '2024', coverUrl: '/src/assets/la_torten_cover.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
-  { id: '1', title: 'Echoes of Silence', type: 'Album', year: '2024', coverUrl: '/src/assets/artist_headphones.png', spotifyUrl: '#', appleMusicUrl: '#' },
-  { id: '2', title: 'Midnight Drive', type: 'Single', year: '2023', coverUrl: '/src/assets/portrait_sunglasses.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
-  { id: '3', title: 'Neon Dreams', type: 'EP', year: '2023', coverUrl: '/src/assets/artist_leather_full.png', spotifyUrl: '#', appleMusicUrl: '#' },
+  { id: '0', title: 'La Torten', type: 'Single', year: '2024', coverUrl: '/la_torten_cover.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
+  { id: '1', title: 'Echoes of Silence', type: 'Album', year: '2024', coverUrl: '/artist_headphones.png', spotifyUrl: '#', appleMusicUrl: '#' },
+  { id: '2', title: 'Midnight Drive', type: 'Single', year: '2023', coverUrl: '/portrait_sunglasses.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
+  { id: '3', title: 'Neon Dreams', type: 'EP', year: '2023', coverUrl: '/artist_leather_full.png', spotifyUrl: '#', appleMusicUrl: '#' },
 ];
 
 export const VIDEOS: Video[] = [
-  { id: '1', title: 'La Torten (Official Video)', category: 'Music Video', thumbnailUrl: '/src/assets/la_torten_cover.jpg', videoUrl: '#' },
-  { id: '2', title: 'Live at Combattant', category: 'Live Session', thumbnailUrl: '/src/assets/hero_stage.jpg', videoUrl: '#' },
-  { id: '3', title: 'The Making of La Torten', category: 'Behind the Scenes', thumbnailUrl: '/src/assets/artist_garden.jpg', videoUrl: '#' },
+  { id: '1', title: 'La Torten (Official Video)', category: 'Music Video', thumbnailUrl: '/la_torten_cover.jpg', videoUrl: '#' },
+  { id: '2', title: 'Live at Combattant', category: 'Live Session', thumbnailUrl: '/hero_stage.jpg', videoUrl: '#' },
+  { id: '3', title: 'The Making of La Torten', category: 'Behind the Scenes', thumbnailUrl: '/artist_garden.jpg', videoUrl: '#' },
 ];
 
 export const MILESTONES: Milestone[] = [

@@ -11,7 +11,7 @@ export const Home: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/hero_stage.jpg"
+            src="/hero_stage.jpg"
             alt="Hero Background"
             className="w-full h-full object-cover opacity-40 scale-105"
             referrerPolicy="no-referrer"
@@ -59,17 +59,17 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <div className="md:col-span-8 h-[500px] rounded-2xl overflow-hidden relative group">
-              <img src="/src/assets/artist_garden.jpg" alt="Vibe 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src="/artist_garden.jpg" alt="Vibe 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-10">
                 <p className="text-2xl font-serif italic">"Sound is the only architecture that doesn't need walls."</p>
               </div>
             </div>
             <div className="md:col-span-4 grid grid-rows-2 gap-6">
               <div className="rounded-2xl overflow-hidden">
-                <img src="/src/assets/portrait_sunglasses.jpg" alt="Vibe 2" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="/portrait_sunglasses.jpg" alt="Vibe 2" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div className="rounded-2xl overflow-hidden">
-                <img src="/src/assets/la_torten_cover.jpg" alt="Vibe 3" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src="/la_torten_cover.jpg" alt="Vibe 3" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>
