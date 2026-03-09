@@ -14,6 +14,7 @@ export interface Release {
   coverUrl: string;
   spotifyUrl: string;
   appleMusicUrl: string;
+  audioUrl?: string;
 }
 
 export interface Video {

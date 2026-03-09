@@ -7,8 +7,8 @@ export const SHOWS: Show[] = [
 ];
 
 export const RELEASES: Release[] = [
-  { id: '0', title: 'La Torten', type: 'Single', year: '2024', coverUrl: '/la_torten_cover.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
-  { id: '1', title: 'Echoes of Silence', type: 'Album', year: '2024', coverUrl: '/artist_headphones.png', spotifyUrl: '#', appleMusicUrl: '#' },
+  { id: '0', title: 'La Torten', type: 'Single', year: '2024', coverUrl: '/la_torten_cover.jpg', spotifyUrl: '#', appleMusicUrl: '#', audioUrl: '/audio_1.mpeg' },
+  { id: '1', title: 'Echoes of Silence', type: 'Album', year: '2024', coverUrl: '/artist_headphones.png', spotifyUrl: '#', appleMusicUrl: '#', audioUrl: '/audio_2.mpeg' },
   { id: '2', title: 'Midnight Drive', type: 'Single', year: '2023', coverUrl: '/portrait_sunglasses.jpg', spotifyUrl: '#', appleMusicUrl: '#' },
   { id: '3', title: 'Neon Dreams', type: 'EP', year: '2023', coverUrl: '/artist_leather_full.png', spotifyUrl: '#', appleMusicUrl: '#' },
 ];

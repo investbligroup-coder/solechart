@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, Music as MusicIcon, ExternalLink, Filter } from 'lucide-react';
+import { Play, Music as MusicIcon, ExternalLink, Filter, Pause } from 'lucide-react';
 import { RELEASES } from '../constants';
+import { usePlayerStore } from '../store';
 
 export const Music: React.FC = () => {
+  const { currentTrack, isPlaying, setTrack, togglePlay } = usePlayerStore();
   const [filter, setFilter] = useState<'All' | 'Album' | 'Single' | 'EP'>('All');
 
-  const filteredReleases = filter === 'All' 
-    ? RELEASES 
+  const filteredReleases = filter === 'All'
+    ? RELEASES
     : RELEASES.filter(r => r.type === filter);
 
   const filterOptions: ('All' | 'Album' | 'Single' | 'EP')[] = ['All', 'Album', 'Single', 'EP'];
@@ -54,15 +56,31 @@ export const Music: React.FC = () => {
               className="group"
             >
               <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-white/5">
-                <img 
-                  src={release.coverUrl} 
-                  alt={release.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                <img
+                  src={release.coverUrl}
+                  alt={release.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                  <button className="w-14 h-14 bg-primary text-bg-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                    <Play size={24} fill="currentColor" className="ml-1" />
+                  <button
+                    onClick={() => {
+                      if (release.audioUrl) {
+                        if (currentTrack?.id === release.id) {
+                          togglePlay();
+                        } else {
+                          setTrack(release);
+                        }
+                      }
+                    }}
+                    disabled={!release.audioUrl}
+                    className={`w-14 h-14 bg-primary text-bg-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform ${!release.audioUrl ? 'opacity-20 cursor-not-allowed' : ''}`}
+                  >
+                    {currentTrack?.id === release.id && isPlaying ? (
+                      <Pause size={24} fill="currentColor" />
+                    ) : (
+                      <Play size={24} fill="currentColor" className="ml-1" />
+                    )}
                   </button>
                 </div>
                 <div className="absolute top-4 right-4 px-3 py-1 bg-bg-dark/80 backdrop-blur-md rounded-full text-[10px] font-bold tracking-widest border border-white/10">
@@ -88,7 +106,7 @@ export const Music: React.FC = () => {
         </div>
 
         {/* Streaming Platforms Banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
