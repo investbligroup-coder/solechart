@@ -24,7 +24,8 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen relative overflow-x-hidden">
+        <div className="noise-overlay" />
         <Header />
         <main className="flex-grow">
           <Routes>

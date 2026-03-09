@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,19 +25,19 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-bg-dark/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-serif font-bold tracking-widest text-primary gold-glow">
+        <Link to="/" className="text-2xl font-serif font-bold tracking-[0.3em] text-primary gold-glow">
           SOLECHART
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center space-x-12">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`text-sm font-medium tracking-widest hover:text-primary transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-white/70'}`}
+              className={`text-[10px] font-bold tracking-[0.3em] transition-all hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-white/40'}`}
             >
               {link.name}
             </Link>
@@ -45,8 +45,8 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
+        <button className="md:hidden text-white/60 hover:text-white transition-colors" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -54,18 +54,18 @@ export const Header: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-bg-dark border-t border-white/10 py-8 px-6 md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 w-full glass-nav border-t border-white/5 py-12 px-6 md:hidden overflow-hidden"
           >
-            <nav className="flex flex-col space-y-6 text-center">
+            <nav className="flex flex-col space-y-8 text-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium tracking-widest ${location.pathname === link.path ? 'text-primary' : 'text-white'}`}
+                  className={`text-xl font-serif font-bold tracking-tighter transition-all ${location.pathname === link.path ? 'text-primary' : 'text-white/40'}`}
                 >
                   {link.name}
                 </Link>

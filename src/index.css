@@ -6,22 +6,52 @@
   --font-serif: "Playfair Display", serif;
   
   --color-primary: #dfbb2a;
-  --color-bg-dark: #0a0a0a;
-  --color-bg-card: #141414;
+  --color-primary-dark: #b89a22;
+  --color-bg-dark: #050505;
+  --color-bg-card: #0f0f0f;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 }
 
 @layer base {
   body {
     @apply bg-bg-dark text-white font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(223,187,42,0.05) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(223,187,42,0.02) 0%, transparent 50%);
+    background-attachment: fixed;
   }
 }
 
-.cinematic-gradient {
-  background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.8), #0a0a0a);
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.glass-nav {
+  @apply bg-bg-dark/80 backdrop-blur-lg border-b border-white/5;
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary-dark;
 }
 
 .gold-glow {
-  text-shadow: 0 0 20px rgba(223, 187, 42, 0.3);
+  text-shadow: 0 0 30px rgba(223, 187, 42, 0.4);
 }
 
 @keyframes marquee {
@@ -30,5 +60,10 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
+
+.hover-lift {
+  @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10;
+}
+
